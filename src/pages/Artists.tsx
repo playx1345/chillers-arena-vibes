@@ -16,18 +16,18 @@ const artists = [
   {
     name: "Killerverse",
     role: "Rapper / Lyricist",
-    image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&q=80",
+    image: "https://images.unsplash.com/photo-508700115892-45ecd05ae2ad?w=600&q=80",
     bio: "Lyrical wordsmith bringing fire bars and energy to every performance.",
     genres: ["Hip-Hop", "Rap"],
     instagram: "https://instagram.com/killerverse",
   },
   {
-    name: "Jaku Beatz",
-    role: "Producer / DJ",
+    name: "Jahku Beatz",
+    role: "Producer",
     image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&q=80",
     bio: "Master producer crafting the beats that move Keffi's nightlife.",
     genres: ["Afro-House", "Amapiano"],
-    instagram: "https://instagram.com/jakubeatz",
+    instagram: "https://instagram.com/jahkubeatz",
   },
   {
     name: "Capt Karisma",
@@ -52,6 +52,16 @@ const artists = [
     bio: "Sultry vocals and powerful performances that leave audiences speechless.",
     genres: ["R&B", "Afrobeats"],
     instagram: "https://instagram.com/melodyqueen",
+  },
+];
+
+const team = [
+  {
+    name: "BIG Puzzle",
+    role: "Manager",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    bio: "The mastermind behind the scenes, ensuring everything runs smoothly at Chiller's Arena.",
+    instagram: "https://instagram.com/bigpuzzle",
   },
 ];
 
@@ -115,6 +125,53 @@ const Artists = () => {
                         </span>
                       ))}
                     </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="py-12 md:py-20 bg-card/50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-12">
+              Meet the <span className="text-accent">Team</span>
+            </h2>
+            <div className="flex justify-center">
+              {team.map((member, index) => (
+                <Card
+                  key={member.name}
+                  className="bg-card border-border overflow-hidden group hover:border-accent/50 transition-all duration-500 animate-slide-up max-w-sm"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="relative aspect-square overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                    
+                    <a
+                      href={member.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                    >
+                      <Instagram className="w-5 h-5" />
+                    </a>
+
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-2xl font-display font-bold mb-1 group-hover:text-accent transition-colors">
+                        {member.name}
+                      </h3>
+                      <p className="text-primary font-medium">{member.role}</p>
+                    </div>
+                  </div>
+
+                  <CardContent className="p-6">
+                    <p className="text-muted-foreground">{member.bio}</p>
                   </CardContent>
                 </Card>
               ))}

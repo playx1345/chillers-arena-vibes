@@ -95,40 +95,39 @@ const Events = () => {
               </p>
             </div>
 
-            <div className="overflow-x-auto">
-              <div className="min-w-max md:min-w-0">
-                <div className="grid grid-cols-7 gap-4 mb-8">
-                  {weeklySchedule.map((schedule, index) => (
-                    <Card
-                      key={schedule.day}
-                      className={cn(
-                        "bg-card border-border transition-all duration-300 hover:scale-105",
-                        schedule.popular && "border-accent/50 shadow-[0_0_15px_rgba(255,20,147,0.15)]"
-                      )}
-                    >
-                      <CardContent className="p-4">
-                        <div className="text-center mb-3">
-                          <span className="text-primary font-bold text-sm uppercase block">
-                            {schedule.day}
-                          </span>
-                          {schedule.popular && <span className="text-accent">⭐</span>}
-                        </div>
-                        <h4 className="font-display font-bold text-sm mb-2 min-h-[2.5rem] text-center">
-                          {schedule.activity}
-                        </h4>
-                        <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground">
-                          <Clock className="w-3 h-3" />
-                          <span>{schedule.time}</span>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+            {/* Desktop: 7-column grid, Tablet: 3-4 columns, Mobile: Scrollable */}
+            <div className="hidden sm:block">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-4">
+                {weeklySchedule.map((schedule, index) => (
+                  <Card
+                    key={schedule.day}
+                    className={cn(
+                      "bg-card border-border transition-all duration-300 hover:scale-105",
+                      schedule.popular && "border-accent/50 shadow-[0_0_15px_rgba(255,20,147,0.15)]"
+                    )}
+                  >
+                    <CardContent className="p-4">
+                      <div className="text-center mb-3">
+                        <span className="text-primary font-bold text-sm uppercase block">
+                          {schedule.day}
+                        </span>
+                        {schedule.popular && <span className="text-accent">⭐</span>}
+                      </div>
+                      <h4 className="font-display font-bold text-sm mb-2 min-h-[2.5rem] text-center">
+                        {schedule.activity}
+                      </h4>
+                      <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground">
+                        <Clock className="w-3 h-3" />
+                        <span>{schedule.time}</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
 
-            {/* Mobile Optimized Table View */}
-            <div className="lg:hidden mt-8">
+            {/* Mobile: Table View */}
+            <div className="sm:hidden">
               <div className="bg-card rounded-lg border border-border overflow-hidden">
                 <table className="w-full">
                   <thead>

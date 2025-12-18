@@ -3,8 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { recurringEvents } from "@/lib/events-data";
 
-const monthlyEvents = recurringEvents;
-
 export function MonthlyEvents() {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden">
@@ -31,7 +29,7 @@ export function MonthlyEvents() {
 
         {/* Events Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {monthlyEvents.map((event, index) => (
+          {recurringEvents.map((event, index) => (
             <Card
               key={event.id}
               className="bg-card border-border overflow-hidden group hover:border-accent/50 transition-all duration-500 animate-slide-up shadow-lg hover:shadow-[0_0_30px_rgba(255,20,147,0.2)]"

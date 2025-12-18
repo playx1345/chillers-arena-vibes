@@ -222,9 +222,8 @@ const Gallery = () => {
                   <Dialog key={image.id}>
                     <DialogTrigger asChild>
                       <div
-                        className="relative aspect-square overflow-hidden rounded-xl cursor-pointer group animate-fade-in hover-lift"
+                        className="relative aspect-square overflow-hidden rounded-xl cursor-pointer group hover-lift"
                         style={{ 
-                          animationDelay: `${index * 0.05}s`,
                           opacity: 0,
                           animation: `fade-in 0.6s ease-out ${index * 0.05}s forwards`
                         }}
@@ -245,7 +244,7 @@ const Gallery = () => {
                         {/* Neon border effect on hover */}
                         <div className="absolute inset-0 rounded-xl border-2 border-primary/0 group-hover:border-primary/60 transition-all duration-500 pointer-events-none" />
                         {/* Category badge */}
-                        {index === 0 && (
+                        {image.id === "profile-1" && (
                           <div className="absolute top-2 left-2 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm">
                             Profile
                           </div>

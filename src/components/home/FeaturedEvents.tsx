@@ -18,6 +18,17 @@ const featuredEvents = [
   },
   {
     id: 2,
+    title: "Keffi Block Party",
+    date: "Last Saturday Monthly",
+    time: "4 PM",
+    location: "Stadium Road, Keffi",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
+    description: "Monthly street party featuring live music, food vendors, and community vibes.",
+    badge: "MONTHLY",
+    highlight: false,
+  },
+  {
+    id: 3,
     title: "Chillers Sensation",
     date: "Every Saturday",
     time: "10 PM",
@@ -28,7 +39,7 @@ const featuredEvents = [
     highlight: false,
   },
   {
-    id: 3,
+    id: 4,
     title: "Valentine's Night Special",
     date: "February 14, 2026",
     time: "9 PM",
@@ -56,7 +67,7 @@ export function FeaturedEvents() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {featuredEvents.map((event, index) => (
             <Card
               key={event.id}

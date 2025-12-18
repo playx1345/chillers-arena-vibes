@@ -14,9 +14,9 @@ A modern web application for Chiller's Arena, Keffi's premier nightlife and ente
 - 📍 **Venue Information** - Located at Gauta/Stadium Road, Keffi, Nasarawa State, Nigeria
 - 📱 **Responsive Design** - Works seamlessly on all devices
 
-## Project Info
+## Repository
 
-**Repository**: [playx1345/chillers-arena-vibes](https://github.com/playx1345/chillers-arena-vibes)
+**GitHub**: [playx1345/chillers-arena-vibes](https://github.com/playx1345/chillers-arena-vibes)
 
 ## How can I edit this code?
 
@@ -24,9 +24,9 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-This project was built with [Lovable](https://lovable.dev), an AI-powered web development platform. You can continue development using Lovable's visual editor and AI assistance.
+This project was built with [Lovable](https://lovable.dev), an AI-powered web development platform. You can continue development using Lovable's visual editor and AI assistance by importing this repository into your Lovable workspace.
 
-Changes made via Lovable will be committed automatically to this repo.
+Changes made via Lovable can be synced automatically with this repo.
 
 **Use your preferred IDE**
 

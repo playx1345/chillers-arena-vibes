@@ -1,60 +1,7 @@
 import { Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-
-const weeklySchedule = [
-  {
-    day: "Monday",
-    activity: "Bear Rush",
-    time: "3pm - 11pm",
-    type: "special",
-    color: "primary",
-  },
-  {
-    day: "Tuesday",
-    activity: "Movie and Games Night",
-    time: "6pm - 11pm",
-    type: "entertainment",
-    color: "secondary",
-  },
-  {
-    day: "Wednesday",
-    activity: "Ladies' Night",
-    time: "8pm - 2am",
-    type: "special",
-    color: "accent",
-    popular: true,
-  },
-  {
-    day: "Thursday",
-    activity: "17:59 @Arena / Karaoke Night",
-    time: "8pm - 2am",
-    type: "music",
-    color: "primary",
-  },
-  {
-    day: "Friday",
-    activity: "Weekend Affire",
-    time: "8pm - 2am",
-    type: "special",
-    color: "accent",
-  },
-  {
-    day: "Saturday",
-    activity: "OldSkol Music Time",
-    time: "3pm - 11pm",
-    type: "music",
-    color: "primary",
-  },
-  {
-    day: "Sunday",
-    activity: "Live Band Night",
-    time: "6pm - 11pm",
-    type: "music",
-    color: "primary",
-    popular: true,
-  },
-];
+import { weeklySchedule } from "@/lib/events-data";
 
 export function WeeklySchedule() {
   return (

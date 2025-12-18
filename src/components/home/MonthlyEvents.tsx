@@ -1,31 +1,9 @@
 import { Calendar, MapPin, Music, Star, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { recurringEvents } from "@/lib/events-data";
 
-const monthlyEvents = [
-  {
-    id: 1,
-    title: "Keffi Block Party",
-    recurrence: "MONTHLY",
-    schedule: "Last Saturday of every month",
-    time: "4:00 PM - 12:00 AM",
-    location: "Stadium Road, Keffi",
-    description: "The biggest street party in Nasarawa State! Join us for live performances, amazing food vendors, and non-stop music. A community celebration bringing together families, friends, and music lovers.",
-    highlights: ["Live Performances", "Street Food", "DJ Sets", "Family Friendly"],
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
-  },
-  {
-    id: 2,
-    title: "Nasarawa Industry Night",
-    recurrence: "QUARTERLY",
-    schedule: "Once every quarter",
-    time: "8:00 PM - 2:00 AM",
-    location: "Chiller's Arena, Keffi",
-    description: "A prestigious networking event celebrating the business and creative industries of Nasarawa State. Connect with industry leaders, enjoy premium entertainment, and experience the best of what our state has to offer.",
-    highlights: ["Networking", "Premium Entertainment", "Industry Leaders", "Live Music"],
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
-  },
-];
+const monthlyEvents = recurringEvents;
 
 export function MonthlyEvents() {
   return (

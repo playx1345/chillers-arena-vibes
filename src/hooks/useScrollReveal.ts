@@ -18,6 +18,13 @@ export function useScrollReveal({
     const element = ref.current;
     if (!element) return;
 
+    // Check if IntersectionObserver is supported
+    if (!('IntersectionObserver' in window)) {
+      // Fallback: set as visible immediately for older browsers
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

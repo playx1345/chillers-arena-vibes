@@ -117,9 +117,7 @@ export function GalleryPreview() {
                     </div>
                   </div>
                   {/* Neon glow border on hover */}
-                  <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/50 rounded-xl transition-all duration-300 pointer-events-none" 
-                       style={{ boxShadow: '0 0 20px rgba(0, 191, 255, 0)' }}
-                  />
+                  <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/50 rounded-xl transition-all duration-300 pointer-events-none group-hover:shadow-[0_0_20px_rgba(0,191,255,0.5)]" />
                 </div>
               ))}
         </div>

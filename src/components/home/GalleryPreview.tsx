@@ -59,15 +59,18 @@ export function GalleryPreview() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-card">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-neon-gold/10 text-neon-gold px-4 py-2 rounded-full mb-4">
+    <section className="py-20 md:py-28 bg-card relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 gradient-background opacity-30" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-12 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 bg-neon-gold/10 text-neon-gold px-4 py-2 rounded-full mb-4 hover-scale animate-bounce-subtle">
             <Camera className="w-4 h-4" />
             <span className="font-medium text-sm">Powered by Jay Photography</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-display font-black uppercase mb-4">
-            <span className="text-accent neon-text-pink">Event</span> Gallery
+            <span className="text-accent neon-text-pink gradient-text-animated">Event</span> Gallery
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Relive the magic from our past events. Every night is a story.
@@ -85,7 +88,7 @@ export function GalleryPreview() {
                   }`}
                 >
                   <Skeleton
-                    className={`aspect-square ${
+                    className={`aspect-square skeleton ${
                       index === 0 ? "md:aspect-auto md:h-full md:min-h-[400px]" : ""
                     }`}
                   />
@@ -94,31 +97,39 @@ export function GalleryPreview() {
             : images.map((image, index) => (
                 <div
                   key={index}
-                  className={`relative overflow-hidden rounded-xl group cursor-pointer ${
+                  className={`relative overflow-hidden rounded-xl group cursor-pointer animate-scale-in hover-lift ${
                     index === 0 ? "md:col-span-2 md:row-span-2" : ""
                   }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className={`aspect-square ${index === 0 ? "md:aspect-auto md:h-full" : ""}`}>
                     <img
                       src={image}
                       alt={`Event photo ${index + 1}`}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700 ease-out"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-foreground font-bold text-lg">View</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <Camera className="w-8 h-8 text-primary mx-auto mb-2 animate-bounce-subtle" />
+                      <span className="text-foreground font-bold text-lg neon-text-blue">View Photo</span>
+                    </div>
                   </div>
+                  {/* Neon glow border on hover */}
+                  <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/50 rounded-xl transition-all duration-300 pointer-events-none" 
+                       style={{ boxShadow: '0 0 20px rgba(0, 191, 255, 0)' }}
+                  />
                 </div>
               ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
           <Button
             asChild
             size="lg"
             variant="outline"
-            className="border-accent text-accent hover:bg-accent/10 font-bold"
+            className="border-accent text-accent hover:bg-accent/10 font-bold hover-glow shimmer-effect"
           >
             <Link to="/gallery">
               View Full Gallery <ArrowRight className="ml-2 w-5 h-5" />
